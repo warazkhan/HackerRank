@@ -1,0 +1,32 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+#
+# Complete the 'missingCharacters' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING s as parameter.
+#
+from string import digits, ascii_lowercase
+
+def missingCharacters(s):
+  
+    return "".join(resultString for resultString in digits + ascii_lowercase if resultString not in s)
+ 
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = missingCharacters(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
