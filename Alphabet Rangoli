@@ -1,0 +1,101 @@
+# You are given an integer, . Your task is to print an alphabet rangoli of size . (Rangoli is a form of Indian folk art based on creation of patterns.)
+# The center of the rangoli has the first alphabet letter a, and the boundary has the  alphabet letter (in alphabetical order).
+
+# Function Description
+# Complete the rangoli function in the editor below.
+# rangoli has the following parameters:
+# int size: the size of the rangoli
+# Returns
+# string: a single string made up of each of the lines of the rangoli separated by a newline character (\n)
+# Input Format
+# Only one line of input containing , the size of the rangoli.
+# Constraints
+# Sample Input
+# 5
+# Sample Output
+# --------e--------
+# ------e-d-e------
+# ----e-d-c-d-e----
+# --e-d-c-b-c-d-e--
+# e-d-c-b-a-b-c-d-e
+# --e-d-c-b-c-d-e--
+# ----e-d-c-d-e----
+# ------e-d-e------
+# --------e--------
+
+def print_rangoli(size):
+    alphabets = string.ascii_lowercase  
+    ReversedAphabets = reversed(alphabets[:size])
+    characters = []
+    width = (2*size)-1
+    lowerPart=[]
+    
+    for char in ReversedAphabets:
+        characters.append(char)
+        upperPart = ('-'.join(characters).rjust(width,'-'))[:-1] + '-'.join(reversed(characters)).ljust(width,'-')
+        lowerPart.append(upperPart)
+        print(upperPart)
+            
+    for upperPart in reversed(lowerPart[:-1]):
+        print(upperPart)
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
+
+
+
+26
+
+--------------------------------------------------z--------------------------------------------------
+------------------------------------------------z-y-z------------------------------------------------
+----------------------------------------------z-y-x-y-z----------------------------------------------
+--------------------------------------------z-y-x-w-x-y-z--------------------------------------------
+------------------------------------------z-y-x-w-v-w-x-y-z------------------------------------------
+----------------------------------------z-y-x-w-v-u-v-w-x-y-z----------------------------------------
+--------------------------------------z-y-x-w-v-u-t-u-v-w-x-y-z--------------------------------------
+------------------------------------z-y-x-w-v-u-t-s-t-u-v-w-x-y-z------------------------------------
+----------------------------------z-y-x-w-v-u-t-s-r-s-t-u-v-w-x-y-z----------------------------------
+--------------------------------z-y-x-w-v-u-t-s-r-q-r-s-t-u-v-w-x-y-z--------------------------------
+------------------------------z-y-x-w-v-u-t-s-r-q-p-q-r-s-t-u-v-w-x-y-z------------------------------
+----------------------------z-y-x-w-v-u-t-s-r-q-p-o-p-q-r-s-t-u-v-w-x-y-z----------------------------
+--------------------------z-y-x-w-v-u-t-s-r-q-p-o-n-o-p-q-r-s-t-u-v-w-x-y-z--------------------------
+------------------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-n-o-p-q-r-s-t-u-v-w-x-y-z------------------------
+----------------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z----------------------
+--------------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z--------------------
+------------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z------------------
+----------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z----------------
+--------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z--------------
+------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z------------
+----------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-g-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z----------
+--------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-g-f-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z--------
+------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-g-f-e-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z------
+----z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-g-f-e-d-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z----
+--z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-g-f-e-d-c-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z--
+z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-g-f-e-d-c-b-a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z
+--z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-g-f-e-d-c-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z--
+----z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-g-f-e-d-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z----
+------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-g-f-e-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z------
+--------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-g-f-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z--------
+----------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-g-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z----------
+------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z------------
+--------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z--------------
+----------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z----------------
+------------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z------------------
+--------------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z--------------------
+----------------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z----------------------
+------------------------z-y-x-w-v-u-t-s-r-q-p-o-n-m-n-o-p-q-r-s-t-u-v-w-x-y-z------------------------
+--------------------------z-y-x-w-v-u-t-s-r-q-p-o-n-o-p-q-r-s-t-u-v-w-x-y-z--------------------------
+----------------------------z-y-x-w-v-u-t-s-r-q-p-o-p-q-r-s-t-u-v-w-x-y-z----------------------------
+------------------------------z-y-x-w-v-u-t-s-r-q-p-q-r-s-t-u-v-w-x-y-z------------------------------
+--------------------------------z-y-x-w-v-u-t-s-r-q-r-s-t-u-v-w-x-y-z--------------------------------
+----------------------------------z-y-x-w-v-u-t-s-r-s-t-u-v-w-x-y-z----------------------------------
+------------------------------------z-y-x-w-v-u-t-s-t-u-v-w-x-y-z------------------------------------
+--------------------------------------z-y-x-w-v-u-t-u-v-w-x-y-z--------------------------------------
+----------------------------------------z-y-x-w-v-u-v-w-x-y-z----------------------------------------
+------------------------------------------z-y-x-w-v-w-x-y-z------------------------------------------
+--------------------------------------------z-y-x-w-x-y-z--------------------------------------------
+----------------------------------------------z-y-x-y-z----------------------------------------------
+------------------------------------------------z-y-z------------------------------------------------
+--------------------------------------------------z--------------------------------------------------
+
