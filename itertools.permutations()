@@ -1,0 +1,40 @@
+# Task
+
+# You are given a string .
+# Your task is to print all possible permutations of size  of the string in lexicographic sorted order.
+
+# Input Format
+# A single line containing the space separated string  and the integer value .
+# The string contains only UPPERCASE characters.
+
+# Output Format
+# Print the permutations of the string  on separate lines.
+
+
+from itertools import permutations
+
+stringInput, lengthPermutation = input().split(' ')
+lengthPermutation = int(lengthPermutation)
+
+resultList = sorted([''.join(p).upper() for p in permutations(stringInput, lengthPermutation)])
+
+for item in resultList:
+    print(item)
+
+
+Input (stdin)
+# HACK 2
+
+# Expected Output
+# AC
+# AH
+# AK
+# CA
+# CH
+# CK
+# HA
+# HC
+# HK
+# KA
+# KC
+# KH
